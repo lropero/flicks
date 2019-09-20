@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import debounce from 'debounce'
 import styled, { withTheme } from 'styled-components/native'
 import { Container, Content, Form, Icon, Input, Item } from 'native-base'
-import { Dimensions, FlatList, Image, TouchableOpacity } from 'react-native'
+import { Dimensions, FlatList, Image, Linking, TouchableOpacity } from 'react-native'
 
 import { Favorites as FavoritesContext } from 'flicks/src/contexts'
 import { Footer, Header } from 'flicks/src/components'
@@ -43,6 +43,12 @@ const Poster = styled.View`
 const Title = styled.Text`
   color: ${({ theme }) => theme.sanMarino};
   font-size: 16px;
+`
+
+const Trailer = styled.Text`
+  color: ${({ theme }) => theme.silver};
+  font-size: 14px;
+  margin-top: 8px;
 `
 
 const Search = ({ theme }) => {
@@ -96,7 +102,8 @@ const Search = ({ theme }) => {
         </Left>
         <Details>
           <Title numberOfLines={1}>{item.title}</Title>
-          <Overview numberOfLines={4}>{(item.overview.length && item.overview) || 'No overview available'}</Overview>
+          <Overview numberOfLines={3}>{(item.overview.length && item.overview) || 'No overview available'}</Overview>
+          <Trailer onPress={() => Linking.openURL(`https://www.youtube.com/results?search_query=${encodeURIComponent(item.title)}+trailer`)}>Watch trailer</Trailer>
         </Details>
       </Movie>
     )
