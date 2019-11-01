@@ -2,19 +2,18 @@
 *Workast RN test task*
 
 ### Requires
-- CocoaPods v1.7.5
-- Node v10.16.3
-- Yarn v1.17.3
+- CocoaPods v1.8.4
+- Node v12.13.0
 
 ### Installation
 ```sh
-$ yarn
+$ npm install
 ```
 
 ### Starting simulator
 `Starts bundler + simulator, first time it'll take a while`
 ```sh
-$ yarn run start
+$ npm run start
 ```
 
->If simulator fails to start with "Could not find simulator" error then `yarn run devices` and replace simulator in packages.json's `start` script with an existing one in your system.
+>If simulator fails to start with "Could not find simulator" error then `npm run devices` and replace simulator in packages.json's `start` script with an existing one in your system.
