@@ -12,7 +12,7 @@
     "upgrade": "npx upgradeps -n -s react-native"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "debounce": "^1.2.0",
     "native-base": "^2.13.8",
     "react": "^16.11.0",
